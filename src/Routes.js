@@ -35,7 +35,7 @@ function Routes() {
                     return(<Menu />)
                 })
             }
-        },5000)
+        },500)
     }, [Rmenu])
 
     return (
@@ -43,7 +43,7 @@ function Routes() {
             {Rmenu}
             <main>
                 <Switch>
-                    <Route exact path="/" component={Home} />
+                    <Route exact path="/livro-corrente" component={Home} />
                     <Route path="/Bibliotecas" component={Bibliotecas} />
                     <Route path="/QuemSomos" component={QuemSomos} />
                     <Route path="/Campanhas" component={Campanhas} />

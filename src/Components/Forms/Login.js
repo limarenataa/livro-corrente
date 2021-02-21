@@ -26,7 +26,6 @@ export default function Login() {
             localStorage.setItem("token", data.token)
         }
         setResp(data.Mensagem)
-
         if (resp == "Email incorreto"){
             alert("Email incorreto")
             return(<Redirect to='/Login-Biblioteca' />)

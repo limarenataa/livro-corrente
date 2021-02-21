@@ -39,12 +39,5 @@ export async function aoEnviarForm(dados){
         body: JSON.stringify({dados})})
 
     const data = await answer.json()
-    if (data.Mensagem == "Seu cadastro está em analise"){
-        alert("Obtigado pelo cadastro, ele esta em analise agora")
-    } else if (data.Mensagem == "Email já cadastrado") {
-        alert("Email já cadastrado")
-    } else {
-        alert("Erro no cadastro")
-    }
 } 
   

@@ -11,7 +11,9 @@ function CadastroCampanhas() {
 
     const [livros, setLivros] = useState([])
 
-    useEffect(async () => {
+    useEffect( () => {
+
+    setInterval( async () => {
         const answer = await fetch("https://back-livro-corrente.herokuapp.com/livros",{
             method: "POST",
             headers:{"Content-Type":"application/json",
@@ -24,6 +26,8 @@ function CadastroCampanhas() {
         return(<Redirect to="/Login-Biblioteca"/>)
     }
     setLivros(data)
+    },2000)
+        
     }, [livros])
 
     const cardsAtivos = livros.map((item) => {

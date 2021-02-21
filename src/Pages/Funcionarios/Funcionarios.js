@@ -9,7 +9,10 @@ function Funcionarios(){
 
     const [ funcionarios, setFuncionarios] = useState([])
 
-    useEffect( async () => {
+    useEffect(() => {
+        
+    setInterval( async () => {
+
         const answer = await fetch("https://back-livro-corrente.herokuapp.com/funcionarios",{
             method: "POST",
             headers:{"Content-Type":"application/json",
@@ -17,14 +20,15 @@ function Funcionarios(){
             }
         })
 
-    const data = await answer.json()
+        const data = await answer.json()
 
-    if (data.Mensagem == "Token Invalido"){
-        return(<Redirect to="/Login-Biblioteca"/>)
-    }
+        if (data.Mensagem == "Token Invalido"){
+            return(<Redirect to="/Login-Biblioteca"/>)
+        }
 
-    setFuncionarios(data)
+        setFuncionarios(data)
 
+    },2000)
     }, [funcionarios])
     
     const func = funcionarios.map(item => {
