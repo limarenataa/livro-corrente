@@ -41,7 +41,7 @@ export default function CampanhaInativa(props){
   }
 
   async function Update(){
-    const answer = await fetch("https://back-livro-corrente.herokuapp.com/remover/card",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/atualiza/validacao/card",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
