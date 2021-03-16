@@ -34,7 +34,7 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
     const [bibliotecas, setBibliotecas] = useState([])
 
     async function Func1(id){
-        const answer = await fetch("https://back-livro-corrente.herokuapp.com/formulario",{
+        const answer = await fetch("https://back-livro-corrente.herokuapp.com/formulario/biblioteca",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"id":id})})
